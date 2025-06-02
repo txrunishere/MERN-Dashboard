@@ -11,6 +11,17 @@ const apiSlice = createApi({
             url: "/user/login",
             method: "POST",
             body: data,
+            credentials: "include",
+          };
+        },
+      }),
+      handleRegisterUser: builder.mutation({
+        query: (data) => {
+          return {
+            url: "/user/register",
+            method: "POST",
+            body: data,
+            credentials: "include",
           };
         },
       }),
@@ -19,4 +30,5 @@ const apiSlice = createApi({
 });
 
 export default apiSlice;
-export const { useHandleLoginUserMutation } = apiSlice;
+export const { useHandleLoginUserMutation, useHandleRegisterUserMutation } =
+  apiSlice;
